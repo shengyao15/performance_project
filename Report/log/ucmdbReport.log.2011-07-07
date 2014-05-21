@@ -1,0 +1,78 @@
+2011-07-07 14:41:05 ReportUtil - Report windows Service Cmd is start
+2011-07-07 14:41:05 ReportUtil - Report onInitialization.
+2011-07-07 14:41:05 ReportUtil - Report Start Tasks.
+2011-07-07 14:41:05 ReportUtil -  Start SendTask task. Get parameter:1000  86400000
+2011-07-07 14:41:05 ReportUtil - Report All tasks are started.
+2011-07-07 14:41:09 ReportUtil - send mail success! 
+2011-07-07 14:43:15 ReportUtil - Report windows Service Cmd is start
+2011-07-07 14:43:15 ReportUtil - Report onInitialization.
+2011-07-07 14:43:15 ReportUtil - Report Start Tasks.
+2011-07-07 14:43:16 ReportUtil -  Start SendTask task. Get parameter:1000  86400000
+2011-07-07 14:43:16 ReportUtil - Report All tasks are started.
+2011-07-07 14:43:17 ReportUtil - send mail failed£º
+2011-07-07 14:48:13 ReportUtil - Report windows Service Cmd is start
+2011-07-07 14:48:13 ReportUtil - Report onInitialization.
+2011-07-07 14:48:13 ReportUtil - Report Start Tasks.
+2011-07-07 14:48:13 ReportUtil -  Start SendTask task. Get parameter:1000  86400000
+2011-07-07 14:48:13 ReportUtil - Report All tasks are started.
+2011-07-07 14:48:17 ReportUtil - send mail success! 
+2011-07-07 14:53:22 ReportUtil - Report windows Service Cmd is start
+2011-07-07 14:53:22 ReportUtil - Report onInitialization.
+2011-07-07 14:53:22 ReportUtil - Report Start Tasks.
+2011-07-07 14:53:22 ReportUtil -  Start SendTask task. Get parameter:1000  86400000
+2011-07-07 14:53:22 ReportUtil - Report All tasks are started.
+2011-07-07 14:53:23 ReportUtil - This Mail From: ling-kai.zhang@hp.com
+2011-07-07 14:53:23 ReportUtil - This Mail To: yiren.ding@hp.com
+2011-07-07 14:53:23 ReportUtil - This Mail cc To: ling-kai.zhang@hp.com
+2011-07-07 14:53:23 ReportUtil - This Mail bcc To: null
+2011-07-07 14:53:26 ReportUtil - send mail success! 
+2011-07-07 14:54:15 ReportUtil - Report windows Service Cmd is start
+2011-07-07 14:54:15 ReportUtil - Report onInitialization.
+2011-07-07 14:54:15 ReportUtil - Report Start Tasks.
+2011-07-07 14:54:15 ReportUtil -  Start SendTask task. Get parameter:1000  86400000
+2011-07-07 14:54:15 ReportUtil - Report All tasks are started.
+2011-07-07 14:54:16 ReportUtil - This Mail From: ling-kai.zhang@hp.com
+2011-07-07 14:54:16 ReportUtil - This Mail To: yiren.ding@hp.com
+2011-07-07 14:54:16 ReportUtil - This Mail cc To: ling-kai.zhang@hp.com
+2011-07-07 14:54:16 ReportUtil - This Mail bcc To: null
+2011-07-07 14:54:19 ReportUtil - send mail success! 
+2011-07-07 14:55:32 ReportUtil - Report windows Service Cmd is start
+2011-07-07 14:55:32 ReportUtil - Report onInitialization.
+2011-07-07 14:55:32 ReportUtil - Report Start Tasks.
+2011-07-07 14:55:32 ReportUtil -  Start SendTask task. Get parameter:1000  86400000
+2011-07-07 14:55:32 ReportUtil - Report All tasks are started.
+2011-07-07 14:55:33 ReportUtil - This Mail From: ling-kai.zhang@hp.com
+2011-07-07 14:55:33 ReportUtil - This Mail To: yiren.ding@hp.com
+2011-07-07 14:55:33 ReportUtil - This Mail cc To: ling-kai.zhang@hp.com
+2011-07-07 14:55:33 ReportUtil - This Mail bcc To: null
+2011-07-07 14:55:36 ReportUtil - send mail success! 
+2011-07-07 15:09:31 ReportUtil - Report windows Service Cmd is start
+2011-07-07 15:09:31 ReportUtil - Report onInitialization.
+2011-07-07 15:09:31 ReportUtil - Report Start Tasks.
+2011-07-07 15:09:31 ReportUtil -  Start SendTask task. Get parameter:1000  86400000
+2011-07-07 15:09:31 ReportUtil - Report All tasks are started.
+2011-07-07 15:09:32 ReportUtil - This Mail From: ling-kai.zhang@hp.com
+2011-07-07 15:09:32 ReportUtil - This Mail To: yiren.ding@hp.com,rao.sheng@hp.com
+2011-07-07 15:09:32 ReportUtil - This Mail cc To: 
+2011-07-07 15:09:32 ReportUtil - This Mail bcc To: null
+2011-07-07 15:09:35 ReportUtil - send mail success! 
+2011-07-07 15:11:18 ReportUtil - Report windows Service Cmd is start
+2011-07-07 15:11:18 ReportUtil - Report onInitialization.
+2011-07-07 15:11:18 ReportUtil - Report Start Tasks.
+2011-07-07 15:11:18 ReportUtil -  Start SendTask task. Get parameter:1000  86400000
+2011-07-07 15:11:18 ReportUtil - Report All tasks are started.
+2011-07-07 15:11:19 ReportUtil - This Mail From: ling-kai.zhang@hp.com
+2011-07-07 15:11:19 ReportUtil - This Mail To: yiren.ding@hp.com,rao.sheng@hp.com
+2011-07-07 15:11:19 ReportUtil - This Mail cc To: ling-kai.zhang@hp.com
+2011-07-07 15:11:19 ReportUtil - This Mail bcc To: 
+2011-07-07 15:11:23 ReportUtil - send mail success! 
+2011-07-07 15:17:16 ReportUtil - Report windows Service Cmd is start
+2011-07-07 15:17:16 ReportUtil - Report onInitialization.
+2011-07-07 15:17:16 ReportUtil - Report Start Tasks.
+2011-07-07 15:17:16 ReportUtil -  Start SendTask task. Get parameter:1000  86400000
+2011-07-07 15:17:16 ReportUtil - Report All tasks are started.
+2011-07-07 15:17:17 ReportUtil - This Mail From: ling-kai.zhang@hp.com
+2011-07-07 15:17:17 ReportUtil - This Mail To: yiren.ding@hp.com,rao.sheng@hp.com
+2011-07-07 15:17:17 ReportUtil - This Mail cc To: ling-kai.zhang@hp.com
+2011-07-07 15:17:17 ReportUtil - This Mail bcc To: 
+2011-07-07 15:17:20 ReportUtil - send mail success! 

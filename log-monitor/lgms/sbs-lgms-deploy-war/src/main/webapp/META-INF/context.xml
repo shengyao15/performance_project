@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+        <Parameter name="path" value="sbs-lgms-1.0.0-SNAPSHOT"  override="false"/>
+</Context>
+

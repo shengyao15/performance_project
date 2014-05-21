@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.hp.hpsc.log-monitor</groupId>
+		<artifactId>lgms</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.hp.hpsc.log-monitor</groupId>
+	<artifactId>sbs-lgms-service</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<build>
+		<plugins>
+
+			<!-- Maven Compiler: Compiles the project -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${mavenCompilerVersion}</version>
+				<configuration>
+					<source>${javaVersion}</source>
+					<target>${javaVersion}</target>
+				</configuration>
+			</plugin>
+
+			<!-- Jar Plugin: Assembles a jar with compiled code -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${mavenJarVersion}</version>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Built-By>${user.name}</Built-By>
+							<Build-Jdk>${java.version}</Build-Jdk>
+							<Created-By>HP EB-IT</Created-By>
+							<Implementation-Title>sbs-lgms-service</Implementation-Title>
+							<Implementation-Service>LGMS</Implementation-Service>
+							<Implementation-Version>${project.version}</Implementation-Version>
+							<Implementation-Vendor-Id>com.hp.it.200160</Implementation-Vendor-Id>
+							<Implementation-Build>${buildNumber}</Implementation-Build>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			
+			<!-- Source Plugin: Assembles a jar with source code -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${mavenSourceVersion}</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<dependencies>
+
+		<!-- Shared Business Services -->
+		<dependency>
+			<groupId>com.hp.it.200160</groupId>
+			<artifactId>sbs-core-server</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.hp.hpsc.log-monitor</groupId>
+			<artifactId>sbs-lgms-shared</artifactId>
+		</dependency>
+		
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.hp.hpsc.log-monitor</groupId> -->
+<!-- 			<artifactId>sbs-lgms-transport-server-client</artifactId> -->
+<!-- 		</dependency> -->
+
+		<dependency>
+			<groupId>com.hp.hpsc.log-monitor</groupId>
+			<artifactId>log-services</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>

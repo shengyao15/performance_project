@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.hp.hpsc.log-monitor</groupId>
+		<artifactId>lgms</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.hp.hpsc.log-monitor</groupId>
+	<artifactId>sbs-lgms-deploy-war</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<build>
+		<plugins>
+		
+			<!-- War Plugin: Assembles a war archive containing the code and resources -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${mavenWarVersion}</version>
+				<configuration>
+					<warName>sbs-lgms-1.0.0-SNAPSHOT</warName>
+					<outputDirectory>${project.build.directory}/apache-tomcat-6.0.32/sbs-services/</outputDirectory>
+					<packagingExcludes>WEB-INF/web.xml</packagingExcludes>
+				</configuration>
+			</plugin>
+			
+			<!-- Jar Plugin: Assembles a jar with compiled code -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${mavenJarVersion}</version>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Built-By>${user.name}</Built-By>
+							<Build-Jdk>${java.version}</Build-Jdk>
+							<Created-By>HP EB-IT</Created-By>
+							<Implementation-Title>sbs-lgms-deploy-war</Implementation-Title>
+							<Implementation-Service>LGMS</Implementation-Service>
+							<Implementation-Version>${project.version}</Implementation-Version>
+							<Implementation-Vendor-Id>com.hp.it.200160</Implementation-Vendor-Id>
+							<Implementation-Build>${buildNumber}</Implementation-Build>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<!-- Tomcat Plugin: Publishes the war file to the target directory -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<version>${mavenTomcatVersion}</version>
+				<configuration>
+					<url>http://${tomcat.hostname}:${tomcat.port}/manager</url>
+					<path>/sbs-lgms-1.0.0-SNAPSHOT</path>
+					<server>sbs-tomcat</server>
+					<warFile>${project.build.directory}/apache-tomcat-6.0.32/sbs-services/sbs-lgms-1.0.0-SNAPSHOT.war</warFile>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+
+		<!-- Shared Business Services -->
+		<dependency>
+			<groupId>com.hp.hpsc.log-monitor</groupId>
+			<artifactId>sbs-lgms-transport-server</artifactId>
+		</dependency>
+
+	</dependencies>
+
+</project>

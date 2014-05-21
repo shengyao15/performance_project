@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="Report">
+	<property file="build.properties"/>
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="C:/dev/eclipse"/>
+    <property name="workspace_loc:Report" value="."/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="Main_Class" value="com.hp.ucmdb.report.main.Main"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="Report.classpath">
+        <pathelement location="bin"/>
+    	<fileset dir="lib" includes="*.jar"/>
+    </path>
+
+    <pathconvert property="manifest.classpath" pathsep=" ">
+      <path refid="Report.classpath"/>
+      <mapper>
+        <chainedmapper>
+           <flattenmapper/>
+           <globmapper from="*.jar" to="lib/*.jar"/>
+        </chainedmapper>
+      </mapper>
+    </pathconvert>
+    
+    <target name="init">
+        <mkdir dir="bin"/>
+    	<mkdir dir="deploy"/>
+    	<mkdir dir="deploy/log"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    	<copy todir="deploy/conf">
+    		<fileset dir="conf"/>
+    	</copy>
+    	<copy todir="deploy/resource">
+			<fileset dir="resource"/>
+    	</copy>
+    	<copy todir="deploy/html">
+    		<fileset dir="html"/>
+    	</copy>
+    	<copy todir="deploy/lib">
+			<fileset dir="lib"/>
+    	</copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    	<delete dir="deploy"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="Report.classpath"/>
+        </javac>
+		<jar destfile="deploy/Report.jar" >
+		  <fileset dir="bin"/>
+          <manifest>
+            <attribute name="Main-Class" value="${Main_Class}"/>
+            <attribute name="Class-Path" value=". ${manifest.classpath}" />
+          </manifest>  			
+		</jar>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target name="Main">
+        <java classname="com.hp.ucmdb.report.main.Main" failonerror="true" fork="yes">
+            <jvmarg line="-Dlog4j.configuration=&quot;file:/${workspace_loc:Report}/conf/log4j.properties&quot;"/>
+            <classpath refid="Report.classpath"/>
+        </java>
+    </target>
+</project>

@@ -1,0 +1,35 @@
+#consumer log
+consumer.max.size=32
+
+consumer.1.url=http://c0007614.itcs.hp.com:50002/log-view/
+consumer.1.folder=/opt/cloudhost/casfw/sp4ts-portal-2.0.1-SNAPSHOT/var/log/vignette-portal
+
+consumer.2.url=http://c0007614.itcs.hp.com:50002/log-view/
+consumer.2.folder=/opt/cloudhost/casfw/sp4ts-portal-2.0.1-SNAPSHOT/var/log/vignette-portal
+
+consumer.3.url=http://c0007614.itcs.hp.com:50002/log-view/
+consumer.3.folder=/opt/cloudhost/casfw/sp4ts-portal-2.0.1-SNAPSHOT/var/log/vignette-portal
+
+consumer.4.url=http://c0007614.itcs.hp.com:50002/log-view/
+consumer.4.folder=/opt/cloudhost/casfw/sp4ts-portal-2.0.1-SNAPSHOT/var/log/vignette-portal
+
+consumer.5.url=http://c0007614.itcs.hp.com:50002/log-view/
+consumer.5.folder=/opt/cloudhost/casfw/sp4ts-portal-2.0.1-SNAPSHOT/var/log/vignette-portal
+
+#producer log
+producer.max.size=32
+
+producer.1.url=http://c0007614.itcs.hp.com:50002/log-view/
+producer.1.folder=/opt/sasuapps/itrc/logs
+
+producer.2.url=http://c0007614.itcs.hp.com:50002/log-view/
+producer.2.folder=/opt/sasuapps/itrc/logs
+
+producer.3.url=http://c0007614.itcs.hp.com:50002/log-view/
+producer.3.folder=/opt/sasuapps/itrc/logs
+
+producer.4.url=http://c0007614.itcs.hp.com:50002/log-view/
+producer.4.folder=/opt/sasuapps/itrc/logs
+
+producer.5.url=http://c0007614.itcs.hp.com:50002/log-view/
+producer.5.folder=/opt/sasuapps/itrc/logs

@@ -1,0 +1,168 @@
+2011-10-13 15:14:55 ReportUtil - Report windows Service Cmd is start
+2011-10-13 15:14:55 ReportUtil - Report onInitialization.
+2011-10-13 15:14:55 ReportUtil - Report Start Tasks.
+2011-10-13 15:14:55 ReportUtil -  Start SendTask task. Get parameter:1000  86400000
+2011-10-13 15:14:55 ReportUtil - Report All tasks are started.
+2011-10-13 15:14:56 ReportUtil - Built Message Content Start ... 
+2011-10-13 15:14:57 ReportUtil - Begin generatePR ... 
+2011-10-13 15:14:57 ReportUtil - call PRDao getSummary ... 
+2011-10-13 15:15:01 ReportUtil - sql = select cpdf.fileid,                              cpdf.filename,                            cpdf.filedatasource,                      cpdf.processstartdate,                    cpdf.processenddate,                      cpdf.recordcount,                         cpdf.filestatus,                          cpdf.recordsinerror,                      cpdf.dscontactemail                  from cim_pr_data_files cpdf              where cpdf.processenddate >= sysdate - 1 
+2011-10-13 15:15:02 ReportUtil - call PRDao getDetail ... 
+2011-10-13 15:15:02 ReportUtil - sql = select cpdr.recordid,                     cpdr.fileid,                      cpdr.recordseqno,                 cpdr.name,                        cpdr.extid,                       cpdr.org_brand,                   cpdr.org_model,                   cpdr.pr_brand,                    cpdr.pr_model,                    cpdr.recordstatus            from cim_pr_data_records cpdr    where cpdr.fileid in (234, 235) order by cpdr.recordseqno 
+2011-10-13 15:15:02 ReportUtil - Begin generateAdapter ... 
+2011-10-13 15:15:02 ReportUtil - call AdapterDao getSummary ... 
+2011-10-13 15:15:02 ReportUtil - sql = select cdf.fileId,                              cdf.filename,                            cdf.filedatasource,                      cdf.processstartdate,                    cdf.processenddate,                      cdf.recordcount,                         cdf.filestatus,                          cdf.recordsinerror,                      cdf.dscontactemail                  from cim_data_files cdf                 where cdf.processenddate >= sysdate - 1 
+2011-10-13 15:15:02 ReportUtil - call AdapterDao getDetail ... 
+2011-10-13 15:15:02 ReportUtil - Begin process template ... 
+2011-10-13 15:15:02 ReportUtil - Begin generate all in one report ... 
+2011-10-13 15:15:02 ReportUtil - Begin write to file: all.html
+2011-10-13 15:15:02 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/all.html
+2011-10-13 15:15:02 ReportUtil - Begin generate one by one report ... 
+2011-10-13 15:15:02 ReportUtil - Begin mapping the pr list to Email map... 
+2011-10-13 15:15:02 ReportUtil - Begin mapping the adapter list to Email map... 
+2011-10-13 15:15:02 ReportUtil - Begin write to file: rao.sheng@hp.com.html
+2011-10-13 15:15:02 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/rao.sheng@hp.com.html
+2011-10-13 15:15:02 ReportUtil - Begin write to file: ling-kai.zhang@hp.com.html
+2011-10-13 15:15:02 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/ling-kai.zhang@hp.com.html
+2011-10-13 15:15:03 ReportUtil - Begin write to file: yiren.ding@hp.com.html
+2011-10-13 15:15:03 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/yiren.ding@hp.com.html
+2011-10-13 15:15:03 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/all.html
+2011-10-13 15:15:03 ReportUtil - Built Message Content End ... 
+2011-10-13 15:15:03 ReportUtil - This Mail From: ling-kai.zhang@hp.com
+2011-10-13 15:15:03 ReportUtil - This Mail To: ling-kai.zhang@hp.com
+2011-10-13 15:15:03 ReportUtil - This Mail cc To: ling-kai.zhang@hp.com
+2011-10-13 15:15:03 ReportUtil - This Mail bcc To: 
+2011-10-13 15:15:06 ReportUtil - send mail success! 
+2011-10-13 15:15:06 ReportUtil - Send mail file: rao.sheng@hp.com.html to rao.sheng@hp.com
+2011-10-13 15:15:06 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/rao.sheng@hp.com.html
+2011-10-13 15:15:06 ReportUtil - This Mail From: ling-kai.zhang@hp.com
+2011-10-13 15:15:06 ReportUtil - This Mail To: rao.sheng@hp.com
+2011-10-13 15:15:06 ReportUtil - This Mail cc To: null
+2011-10-13 15:15:06 ReportUtil - This Mail bcc To: null
+2011-10-13 15:15:08 ReportUtil - send mail success! 
+2011-10-13 15:15:08 ReportUtil - Send mail file: ling-kai.zhang@hp.com.html to ling-kai.zhang@hp.com
+2011-10-13 15:15:08 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/ling-kai.zhang@hp.com.html
+2011-10-13 15:15:08 ReportUtil - This Mail From: ling-kai.zhang@hp.com
+2011-10-13 15:15:08 ReportUtil - This Mail To: ling-kai.zhang@hp.com
+2011-10-13 15:15:08 ReportUtil - This Mail cc To: null
+2011-10-13 15:15:08 ReportUtil - This Mail bcc To: null
+2011-10-13 15:15:11 ReportUtil - send mail success! 
+2011-10-13 15:15:11 ReportUtil - Send mail file: yiren.ding@hp.com.html to yiren.ding@hp.com
+2011-10-13 15:15:11 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/yiren.ding@hp.com.html
+2011-10-13 15:15:11 ReportUtil - This Mail From: ling-kai.zhang@hp.com
+2011-10-13 15:15:11 ReportUtil - This Mail To: yiren.ding@hp.com
+2011-10-13 15:15:11 ReportUtil - This Mail cc To: null
+2011-10-13 15:15:11 ReportUtil - This Mail bcc To: null
+2011-10-13 15:15:13 ReportUtil - send mail success! 
+2011-10-13 15:15:55 ReportUtil - Report windows Service Cmd is start
+2011-10-13 15:15:55 ReportUtil - Report onInitialization.
+2011-10-13 15:15:55 ReportUtil - Report Start Tasks.
+2011-10-13 15:15:55 ReportUtil -  Start SendTask task. Get parameter:1000  86400000
+2011-10-13 15:15:55 ReportUtil - Report All tasks are started.
+2011-10-13 15:15:56 ReportUtil - Built Message Content Start ... 
+2011-10-13 15:15:56 ReportUtil - Begin generatePR ... 
+2011-10-13 15:15:56 ReportUtil - call PRDao getSummary ... 
+2011-10-13 15:16:00 ReportUtil - sql = select cpdf.fileid,                              cpdf.filename,                            cpdf.filedatasource,                      cpdf.processstartdate,                    cpdf.processenddate,                      cpdf.recordcount,                         cpdf.filestatus,                          cpdf.recordsinerror,                      cpdf.dscontactemail                  from cim_pr_data_files cpdf              where cpdf.processenddate >= sysdate - 1 
+2011-10-13 15:16:00 ReportUtil - call PRDao getDetail ... 
+2011-10-13 15:16:00 ReportUtil - sql = select cpdr.recordid,                     cpdr.fileid,                      cpdr.recordseqno,                 cpdr.name,                        cpdr.extid,                       cpdr.org_brand,                   cpdr.org_model,                   cpdr.pr_brand,                    cpdr.pr_model,                    cpdr.recordstatus            from cim_pr_data_records cpdr    where cpdr.fileid in (234, 235) order by cpdr.recordseqno 
+2011-10-13 15:16:00 ReportUtil - Begin generateAdapter ... 
+2011-10-13 15:16:00 ReportUtil - call AdapterDao getSummary ... 
+2011-10-13 15:16:00 ReportUtil - sql = select cdf.fileId,                              cdf.filename,                            cdf.filedatasource,                      cdf.processstartdate,                    cdf.processenddate,                      cdf.recordcount,                         cdf.filestatus,                          cdf.recordsinerror,                      cdf.dscontactemail                  from cim_data_files cdf                 where cdf.processenddate >= sysdate - 1 
+2011-10-13 15:16:00 ReportUtil - call AdapterDao getDetail ... 
+2011-10-13 15:16:00 ReportUtil - Begin process template ... 
+2011-10-13 15:16:00 ReportUtil - Begin generate all in one report ... 
+2011-10-13 15:16:00 ReportUtil - Begin write to file: all.html
+2011-10-13 15:16:00 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/all.html
+2011-10-13 15:16:00 ReportUtil - Begin generate one by one report ... 
+2011-10-13 15:16:00 ReportUtil - Begin mapping the pr list to Email map... 
+2011-10-13 15:16:00 ReportUtil - Begin mapping the adapter list to Email map... 
+2011-10-13 15:16:00 ReportUtil - Begin write to file: rao.sheng@hp.com.html
+2011-10-13 15:16:00 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/rao.sheng@hp.com.html
+2011-10-13 15:16:00 ReportUtil - Begin write to file: ling-kai.zhang@hp.com.html
+2011-10-13 15:16:00 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/ling-kai.zhang@hp.com.html
+2011-10-13 15:16:00 ReportUtil - Begin write to file: yiren.ding@hp.com.html
+2011-10-13 15:16:00 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/yiren.ding@hp.com.html
+2011-10-13 15:16:00 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/all.html
+2011-10-13 15:16:00 ReportUtil - Built Message Content End ... 
+2011-10-13 15:16:01 ReportUtil - This Mail From: ucmdb.fmt.ssa.gdcc.pdl@hp.com
+2011-10-13 15:16:01 ReportUtil - This Mail To: ling-kai.zhang@hp.com
+2011-10-13 15:16:01 ReportUtil - This Mail cc To: ling-kai.zhang@hp.com
+2011-10-13 15:16:01 ReportUtil - This Mail bcc To: 
+2011-10-13 15:16:04 ReportUtil - send mail success! 
+2011-10-13 15:16:04 ReportUtil - Send mail file: rao.sheng@hp.com.html to rao.sheng@hp.com
+2011-10-13 15:16:04 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/rao.sheng@hp.com.html
+2011-10-13 15:16:04 ReportUtil - This Mail From: ucmdb.fmt.ssa.gdcc.pdl@hp.com
+2011-10-13 15:16:04 ReportUtil - This Mail To: rao.sheng@hp.com
+2011-10-13 15:16:04 ReportUtil - This Mail cc To: null
+2011-10-13 15:16:04 ReportUtil - This Mail bcc To: null
+2011-10-13 15:16:06 ReportUtil - send mail success! 
+2011-10-13 15:16:06 ReportUtil - Send mail file: ling-kai.zhang@hp.com.html to ling-kai.zhang@hp.com
+2011-10-13 15:16:06 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/ling-kai.zhang@hp.com.html
+2011-10-13 15:16:06 ReportUtil - This Mail From: ucmdb.fmt.ssa.gdcc.pdl@hp.com
+2011-10-13 15:16:06 ReportUtil - This Mail To: ling-kai.zhang@hp.com
+2011-10-13 15:16:06 ReportUtil - This Mail cc To: null
+2011-10-13 15:16:06 ReportUtil - This Mail bcc To: null
+2011-10-13 15:16:09 ReportUtil - send mail success! 
+2011-10-13 15:16:09 ReportUtil - Send mail file: yiren.ding@hp.com.html to yiren.ding@hp.com
+2011-10-13 15:16:09 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/yiren.ding@hp.com.html
+2011-10-13 15:16:09 ReportUtil - This Mail From: ucmdb.fmt.ssa.gdcc.pdl@hp.com
+2011-10-13 15:16:09 ReportUtil - This Mail To: yiren.ding@hp.com
+2011-10-13 15:16:09 ReportUtil - This Mail cc To: null
+2011-10-13 15:16:09 ReportUtil - This Mail bcc To: null
+2011-10-13 15:16:11 ReportUtil - send mail success! 
+2011-10-13 15:17:39 ReportUtil - Report windows Service Cmd is start
+2011-10-13 15:17:39 ReportUtil - Report onInitialization.
+2011-10-13 15:17:39 ReportUtil - Report Start Tasks.
+2011-10-13 15:17:39 ReportUtil -  Start SendTask task. Get parameter:1000  86400000
+2011-10-13 15:17:39 ReportUtil - Report All tasks are started.
+2011-10-13 15:17:41 ReportUtil - Built Message Content Start ... 
+2011-10-13 15:17:41 ReportUtil - Begin generatePR ... 
+2011-10-13 15:17:41 ReportUtil - call PRDao getSummary ... 
+2011-10-13 15:17:45 ReportUtil - sql = select cpdf.fileid,                              cpdf.filename,                            cpdf.filedatasource,                      cpdf.processstartdate,                    cpdf.processenddate,                      cpdf.recordcount,                         cpdf.filestatus,                          cpdf.recordsinerror,                      cpdf.dscontactemail                  from cim_pr_data_files cpdf              where cpdf.processenddate >= sysdate - 1 
+2011-10-13 15:17:45 ReportUtil - call PRDao getDetail ... 
+2011-10-13 15:17:45 ReportUtil - sql = select cpdr.recordid,                     cpdr.fileid,                      cpdr.recordseqno,                 cpdr.name,                        cpdr.extid,                       cpdr.org_brand,                   cpdr.org_model,                   cpdr.pr_brand,                    cpdr.pr_model,                    cpdr.recordstatus            from cim_pr_data_records cpdr    where cpdr.fileid in (234, 235) order by cpdr.recordseqno 
+2011-10-13 15:17:46 ReportUtil - Begin generateAdapter ... 
+2011-10-13 15:17:46 ReportUtil - call AdapterDao getSummary ... 
+2011-10-13 15:17:46 ReportUtil - sql = select cdf.fileId,                              cdf.filename,                            cdf.filedatasource,                      cdf.processstartdate,                    cdf.processenddate,                      cdf.recordcount,                         cdf.filestatus,                          cdf.recordsinerror,                      cdf.dscontactemail                  from cim_data_files cdf                 where cdf.processenddate >= sysdate - 1 
+2011-10-13 15:17:46 ReportUtil - call AdapterDao getDetail ... 
+2011-10-13 15:17:46 ReportUtil - Begin process template ... 
+2011-10-13 15:17:46 ReportUtil - Begin generate all in one report ... 
+2011-10-13 15:17:46 ReportUtil - Begin write to file: all.html
+2011-10-13 15:17:46 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/all.html
+2011-10-13 15:17:46 ReportUtil - Begin generate one by one report ... 
+2011-10-13 15:17:46 ReportUtil - Begin mapping the pr list to Email map... 
+2011-10-13 15:17:46 ReportUtil - Begin mapping the adapter list to Email map... 
+2011-10-13 15:17:46 ReportUtil - Begin write to file: rao.sheng@hp.com.html
+2011-10-13 15:17:46 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/rao.sheng@hp.com.html
+2011-10-13 15:17:46 ReportUtil - Begin write to file: ling-kai.zhang@hp.com.html
+2011-10-13 15:17:46 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/ling-kai.zhang@hp.com.html
+2011-10-13 15:17:46 ReportUtil - Begin write to file: yiren.ding@hp.com.html
+2011-10-13 15:17:46 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/yiren.ding@hp.com.html
+2011-10-13 15:17:46 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/all.html
+2011-10-13 15:17:46 ReportUtil - Built Message Content End ... 
+2011-10-13 15:17:46 ReportUtil - This Mail From: ucmdb.fmt.ssa.gdcc.pdl@hp.com
+2011-10-13 15:17:46 ReportUtil - This Mail To: ling-kai.zhang@hp.com
+2011-10-13 15:17:46 ReportUtil - This Mail cc To: ling-kai.zhang@hp.com
+2011-10-13 15:17:46 ReportUtil - This Mail bcc To: 
+2011-10-13 15:17:50 ReportUtil - send mail success! 
+2011-10-13 15:17:50 ReportUtil - Send mail file: rao.sheng@hp.com.html to rao.sheng@hp.com
+2011-10-13 15:17:50 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/rao.sheng@hp.com.html
+2011-10-13 15:17:50 ReportUtil - This Mail From: ucmdb.fmt.ssa.gdcc.pdl@hp.com
+2011-10-13 15:17:50 ReportUtil - This Mail To: rao.sheng@hp.com
+2011-10-13 15:17:50 ReportUtil - This Mail cc To: null
+2011-10-13 15:17:50 ReportUtil - This Mail bcc To: null
+2011-10-13 15:17:53 ReportUtil - send mail success! 
+2011-10-13 15:17:53 ReportUtil - Send mail file: ling-kai.zhang@hp.com.html to ling-kai.zhang@hp.com
+2011-10-13 15:17:53 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/ling-kai.zhang@hp.com.html
+2011-10-13 15:17:53 ReportUtil - This Mail From: ucmdb.fmt.ssa.gdcc.pdl@hp.com
+2011-10-13 15:17:53 ReportUtil - This Mail To: ling-kai.zhang@hp.com
+2011-10-13 15:17:53 ReportUtil - This Mail cc To: null
+2011-10-13 15:17:53 ReportUtil - This Mail bcc To: null
+2011-10-13 15:17:55 ReportUtil - send mail success! 
+2011-10-13 15:17:55 ReportUtil - Send mail file: yiren.ding@hp.com.html to yiren.ding@hp.com
+2011-10-13 15:17:55 ReportUtil - Report file absolute path is: C:\MyFolder\development\workspace\R1.2\Report/html/yiren.ding@hp.com.html
+2011-10-13 15:17:55 ReportUtil - This Mail From: ucmdb.fmt.ssa.gdcc.pdl@hp.com
+2011-10-13 15:17:55 ReportUtil - This Mail To: yiren.ding@hp.com
+2011-10-13 15:17:55 ReportUtil - This Mail cc To: null
+2011-10-13 15:17:55 ReportUtil - This Mail bcc To: null
+2011-10-13 15:17:58 ReportUtil - send mail success! 

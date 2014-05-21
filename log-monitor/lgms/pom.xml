@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+	    <artifactId>log-monitor-pom</artifactId>
+	    <groupId>com.hp.hpsc.log-monitor</groupId>
+	    <version>1.0.1-SNAPSHOT</version>
+	</parent>
+
+	<!-- Project Information -->
+	<artifactId>lgms</artifactId>
+	<packaging>pom</packaging>
+	<name>LGMS</name>
+	<description>SBS LGMS Service (parent project)</description>
+
+	<!-- Created command: 
+	mvn "-DgroupId=com.hp.hpsc.log-monitor" "-DartifactId=lgms" 
+		"-Dpackage=com.hp.it.sbs" "-Dversion=1.0.0-SNAPSHOT" "-DserviceName=LGMS" 
+		"-DarchetypeGroupId=com.hp.it.200160" "-DarchetypeArtifactId=sbs-archetype" 
+		"-DarchetypeVersion=2.2.2" "-DtomcatHome=apache-tomcat-6.0.32" 
+		"-DarchetypeCatalog=http://repo1.corp.hp.com/nexus/content/groups/public"
+	-->
+
+	<!-- Project Modules -->
+	<distributionManagement>
+		<!-- Repository: Storage of RELEASE versions -->
+		<repository>
+			<id>releases</id>
+			<name>Internal Releases</name>
+			<url>http://repo1.corp.hp.com/nexus/content/repositories/releases</url>
+		</repository>
+
+		<!-- Repository: Storage of SNAPSHOT versions -->
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Internal Snapshots</name>
+			<url>http://repo1.corp.hp.com/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<properties>
+		<!-- HP Versions -->
+		<iprocessorVersion>2.2.5</iprocessorVersion>
+		<coreSharedVersion>1.1.2</coreSharedVersion>
+		<coreClientVersion>1.1.6</coreClientVersion>
+		<coreServerVersion>1.1.3</coreServerVersion>
+		<masterDataVersion>1.1.18</masterDataVersion>
+		<CASCoreCommonVersion>1.1.4</CASCoreCommonVersion>
+
+		<!-- Java Versions -->
+		<javaVersion>1.5</javaVersion>
+		<junitVersion>4.4</junitVersion>
+		<jmockVersion>2.5.1</jmockVersion>
+		<javaServletVersion>2.5</javaServletVersion>
+		<jdbcOracleVersion>11.2.0.1.0</jdbcOracleVersion>
+				
+		<!--  Spring Version -->
+		<springVersion>3.0.5.RELEASE</springVersion>
+				
+		<!-- Maven Plugin Versions -->
+		<mavenCompilerVersion>2.3.2</mavenCompilerVersion>
+		<mavenReleaseVersion>2.2.1</mavenReleaseVersion>
+		<mavenJarVersion>2.3.1</mavenJarVersion>
+		<mavenSourceVersion>2.1.2</mavenSourceVersion>
+		<mavenJavadocVersion>2.5</mavenJavadocVersion>
+		<mavenWarVersion>2.1.1</mavenWarVersion>
+		<mavenTomcatVersion>1.1</mavenTomcatVersion>
+		<mavenExecVersion>1.1.1</mavenExecVersion>
+		<mavenAssemblyVersion>2.2.1</mavenAssemblyVersion>
+
+		<!-- Logging Versions -->
+		<slf4jVersion>1.5.8</slf4jVersion>
+		<logbackVersion>0.9.17</logbackVersion>
+
+		<!-- Project Settings -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sonar.includedModules>lgms,sbs-lgms-service,sbs-lgms-shared</sonar.includedModules>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+
+				<!-- Maven Compiler: Compiles the project -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${mavenCompilerVersion}</version>
+					<configuration>
+						<source>${javaVersion}</source>
+						<target>${javaVersion}</target>
+					</configuration>
+				</plugin>
+
+				<!-- I-Processor: Generates the transport client/server -->
+				<plugin>
+					<groupId>com.hp.it.200160</groupId>
+					<artifactId>sbs-iprocessor</artifactId>
+					<version>${iprocessorVersion}</version>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				
+				<plugin>
+				    <groupId>org.codehaus.mojo</groupId>
+				    <artifactId>properties-maven-plugin</artifactId>
+				    <version>1.0-alpha-2</version>
+				    <executions>
+				        <execution>
+				            <goals>
+				                <goal>set-system-properties</goal>
+				            </goals>
+				            <phase>compile</phase>
+				            <configuration>
+				                <properties>
+				                    <property>
+				                        <name>user.name</name>
+				                        <value>sbs-generator</value>
+				                    </property>
+				                </properties>
+				            </configuration>
+				        </execution>
+				    </executions>
+				</plugin> 
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<dependencyManagement>
+
+		<dependencies>
+
+			<!-- Shared Business Services -->
+			<dependency>
+				<groupId>com.hp.it.200160</groupId>
+				<artifactId>sbs-core-shared</artifactId>
+				<version>${coreSharedVersion}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.hp.it.200160</groupId>
+				<artifactId>sbs-core-client</artifactId>
+				<version>${coreClientVersion}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.hp.it.200160</groupId>
+				<artifactId>sbs-core-server</artifactId>
+				<version>${coreServerVersion}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+			
+
+
+			<!-- LGMS Service -->
+			<dependency>
+				<groupId>com.hp.hpsc.log-monitor</groupId>
+				<artifactId>sbs-lgms-shared</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.hp.hpsc.log-monitor</groupId>
+				<artifactId>sbs-lgms-service</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.hp.hpsc.log-monitor</groupId>
+				<artifactId>sbs-lgms-service-mock</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.hp.hpsc.log-monitor</groupId>
+				<artifactId>sbs-lgms-service-stub</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.hp.hpsc.log-monitor</groupId>
+				<artifactId>sbs-lgms-transport-client</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.hp.hpsc.log-monitor</groupId>
+				<artifactId>sbs-lgms-transport-client-all</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.hp.hpsc.log-monitor</groupId>
+				<artifactId>sbs-lgms-transport-client-rest</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.hp.hpsc.log-monitor</groupId>
+				<artifactId>sbs-lgms-transport-client-soap</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.hp.hpsc.log-monitor</groupId>
+				<artifactId>sbs-lgms-transport-server</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.hp.hpsc.log-monitor</groupId>
+				<artifactId>sbs-lgms-transport-server-client</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+
+
+
+			<!-- Data Access Layer -->
+<!-- 			<dependency> -->
+<!-- 				<groupId>com.hp.it.119812</groupId> -->
+<!-- 				<artifactId>masterdata-data</artifactId>  -->
+<!-- 				<version>${masterDataVersion}</version> -->
+<!-- 			</dependency> -->
+			
+<!-- 			<dependency> -->
+<!-- 				<groupId>com.hp.it.118361</groupId>  -->
+<!-- 				<artifactId>core-common</artifactId> -->
+<!-- 				<version>${CASCoreCommonVersion}</version>  -->
+<!-- 			</dependency> -->
+
+
+
+			<!--  For Spring -->
+			<dependency>
+	       		<groupId>org.springframework</groupId>
+	  			<artifactId>spring-tx</artifactId>
+	  			<version>${springVersion}</version>
+	    	</dependency>
+	    	
+	    	<dependency>
+	       		<groupId>org.springframework</groupId>
+	  			<artifactId>spring-web</artifactId>
+	  			<version>${springVersion}</version>
+	    	</dependency>
+	    	
+	    	<dependency>
+	       		<groupId>org.springframework</groupId>
+	  			<artifactId>spring-orm</artifactId>
+	  			<version>${springVersion}</version>
+	    	</dependency>
+	    	
+	    				
+	    	
+			<!-- Logging -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4jVersion}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${slf4jVersion}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>${logbackVersion}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logbackVersion}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+			
+			<!-- Internal Service -->
+			<dependency>
+				<groupId>com.hp.hpsc.log-monitor</groupId>
+				<artifactId>log-services</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+  <modules>
+    <module>sbs-lgms-deploy-war</module>
+    <module>sbs-lgms-sample-client</module>
+    <module>sbs-lgms-service</module>
+    <module>sbs-lgms-service-mock</module>
+    <module>sbs-lgms-shared</module>
+    <module>sbs-lgms-service-stub</module>
+    <module>sbs-lgms-transport-client</module>
+    <module>sbs-lgms-transport-client-all</module>
+    <module>sbs-lgms-transport-client-rest</module>
+    <module>sbs-lgms-transport-client-soap</module>
+    <module>sbs-lgms-transport-server</module>
+    <module>sbs-lgms-transport-server-client</module>
+  </modules>
+</project>

@@ -1,0 +1,16 @@
+#consumer log
+consumer.max.size=32
+
+consumer.1.url=http://g2u0460c.austin.hp.com:25727/log-view/
+consumer.1.folder=/opt/sasuapps/itrc/vignette/portal822_itrcA/var/log/vignette-portal
+
+consumer.2.url=http://g2u0461c.austin.hp.com:25727/log-view/
+consumer.2.folder=/opt/sasuapps/itrc/vignette/portal822_itrcA/var/log/vignette-portal
+
+
+#producer log
+producer.max.size=32
+
+producer.1.url=http://g2u0460c.austin.hp.com:27077/log-view/
+producer.1.folder=/opt/sasuapps/itrc/logs/FUT2-producer-logs
+
