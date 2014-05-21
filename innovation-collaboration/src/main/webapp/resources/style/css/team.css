@@ -1,0 +1,10 @@
+#team1,#team2,#selManageParentTeam,#teamMemberBlock,#teamInfoBlock,#subTeamsBlock{
+	display:none;
+}
+
+.selParentTeam{
+	background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+	width:250px;
+	height:25px;
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.hp.it.innovation.collaboration.model">
+	<class name="User" table="c_user">
+		<id name="id" column="ID">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" length="256"></property>
+		<property name="createDate"></property>
+		<property name="updateDate"></property>
+		<property name="displayName" length="100" column="usr_display_name"></property>
+		<property name="password" length="256" column="usr_password"></property>
+		<property name="email" length="128" column="usr_email"></property>
+		<property name="status" length="1" column="usr_status"></property>
+		<property name="headerURL" length="1000" column="usr_header_URL"></property>
+		<property name="gender" length="1" column="usr_gender"></property>
+		<bag name="teams" table="c_r_user_team">
+			<key column="usr_id"></key>
+			<many-to-many class="Team" column="team_id"></many-to-many>
+		</bag>
+		<bag name="roles" table="c_r_user_role" >
+			<key column="usr_id"></key>
+			<many-to-many class="Role" column="role_id"></many-to-many>
+		</bag>
+	</class>
+	<class name="Team" table="c_user_team">
+		<id name="id" column="ID">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" length="256"></property>
+		<property name="createDate"></property>
+		<property name="updateDate"></property>
+		<property name="teamName" length="100" column="team_display_name"></property>
+		<many-to-one name="parent" class="Team" column="team_parent_id" cascade="none"></many-to-one>
+		<bag name="subTeams" order-by="id asc" cascade="none">
+			<key>
+				<column name="team_parent_id"></column>
+			</key>
+			<one-to-many class="Team" not-found="ignore"/>
+		</bag>
+		<bag name="members" table="c_r_user_team">
+			<key column="team_id"></key>
+			<element type="long" column="usr_id"></element>
+		</bag>
+	</class>
+	<class name="Role" table="c_role">
+		<id name="id" column="ID">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" length="256"></property>
+		<property name="createDate"></property>
+		<property name="updateDate"></property>
+		<property name="roleName" length="100" column="role_display_name"></property>
+		<bag name="members" table="c_r_user_role">
+			<key column="role_id"></key>
+			<element type="long" column="usr_id"></element>
+		</bag>
+	</class>
+	<class name="Site" table="c_site">
+		<id name="id" column="ID">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" length="256"></property>
+		<property name="createDate"></property>
+		<property name="updateDate"></property>
+		
+		<property name="siteHost" length="100" column="site_host"></property>
+		<property name="imageHost" length="100" column="site_image_host"></property>
+	</class>
+</hibernate-mapping>

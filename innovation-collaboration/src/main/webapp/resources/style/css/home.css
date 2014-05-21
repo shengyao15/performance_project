@@ -1,0 +1,153 @@
+@CHARSET "UTF-8";
+
+#cslider {
+	width: 95%;
+	height: 730px;
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+#csliderContent {
+	width: 100%;
+	position: absolute;
+	top: 20px;
+	margin-left: 0;
+	box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.52);
+}
+
+.csliderImage {
+	float: left;
+	position: relative;
+	display: none;
+	height: 730px;
+	width: 100%;
+}
+
+.csliderImage img {
+	width: 100%;
+}
+
+.csliderImage span {
+	position: absolute;
+	font: 15px/20px Arial, Helvetica, sans-serif;
+	padding: 10px 13px;
+	width: 100%;
+	height: 60px;
+	background-color: rgba(0, 0, 0, 0.3); 
+	color : #fff;
+	display: none;
+	color: #fff;
+}
+
+.home-optbar {
+	background-color: rgba(0, 0, 0, 0.3);
+	color: #fff;
+	position: absolute;
+	top: 30px;
+	right: 0;
+	height: 70px;
+	width: 100%;
+	z-index: 600;
+	display: none;
+}
+
+.csliderTextBottom {
+	bottom: 0;
+	left: 0;
+}
+
+.csliderTextBottomOffset {
+	bottom: 35px;
+}
+
+.clear {
+	clear: both;
+}
+
+.home-optbar .opt-btn {
+	height: 50px;
+	min-width: 10%;
+	background-color: #EEEEEE;
+	color: #4D5057;
+	filter: alpha(opacity = 100);
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+	opacity: 1;
+	font-size: 300%;
+	font-weight: bolder;
+	float: right;
+	margin: 10px;
+	cursor: pointer;
+	text-align: center;
+	padding: 0 10px;
+}
+
+.home-optbar .opt-btn:hover {
+	background-color: #888888;
+	text-shadow:0 0 5px #00c6ff;
+	color: #00c6ff;
+}
+
+.home-optbar .opt-title {
+	color: #FFFFFF;
+	filter: alpha(opacity = 100);
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+	opacity: 1;
+	font-size: 310%;
+	font-weight: bolder;
+	float: left;
+	min-width: 60%;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.ui-widget-overlay {
+	background-color: #111111;
+	opacity: 0.8;
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+
+/************************************Register********************************/
+#register-panel li em {
+	background:
+		url('/resources/style/img/tips.png')
+		no-repeat;
+	width: 180px;
+	height: 45px;
+	position: absolute;
+	top: -65px;
+	left: 10px;
+	text-align: center;
+	padding: 20px 12px 10px;
+	font-style: normal;
+	z-index: 1200;
+	display: none;
+	color: #606060;
+}
+
+#login-panel li em {
+    background: url("/resources/style/img/tips.png") no-repeat scroll 0 0 transparent;
+    display: none;
+    font-style: normal;
+    height: 45px;
+    left: 10px;
+    padding: 20px 12px 10px;
+    position: absolute;
+    text-align: center;
+    top: -65px;
+    width: 180px;
+    z-index: 1200;
+    color: #606060;
+}
+
+.welcomeRegister {
+	margin: 15px 0 0 15px;
+	font: 15px/20px Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: white;
+}
+/************************************Login********************************/

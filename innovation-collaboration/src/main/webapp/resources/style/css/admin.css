@@ -1,0 +1,165 @@
+/**************/
+/* Admin CSS */
+/**************/
+@CHARSET "UTF-8";
+@IMPORT url("role.css");
+@IMPORT url("team.css");
+
+.admin-panel-container {
+	text-align: center;
+}
+
+.admin-panel-content {
+	font-size: 20px;
+	color: green;
+	font-weight: bold;
+	display: inline-block;
+	margin-top: 60px;
+}
+
+.admin-function-link {
+	text-decoration: none;
+}
+
+.admin-funtion-container {
+	display: inline-block;
+	width: 100px;
+	height: 60px;
+	line-height: 60px;
+	background-color: orange;
+	border: 1px solid black;
+	margin: 10px;
+}
+
+#adminEntry {
+	display: none;
+}
+
+#accordionResizer {
+	float: left;
+	width: 20%;
+	padding: 10px;
+	height: 600px;
+	background-color: #292929;
+}
+
+#content {
+	float: right;
+	width: 75%;
+	padding: 10px;
+	height: 600px;
+	background-color: #292929;
+}
+
+#userSelect ui-selecting {
+	background: #FECA40;
+}
+
+#userSelect .ui-selected {
+	background: #F39814;
+	color: white;
+}
+
+#userSelect {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 98%;
+}
+
+#userSelect li {
+	margin: 3px;
+	padding: 0.4em;
+	font-size: 15px;
+	height: 18px;
+}
+
+#roleSelect .ui-selecting {
+	background: #FECA40;
+}
+
+#roleSelect .ui-selected {
+	background: #F39814;
+	color: white;
+}
+
+#roleSelect {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 98%;
+}
+
+#roleSelect li {
+	margin: 3px;
+	padding: 0.4em;
+	font-size: 15px;
+	height: 18px;
+}
+
+#teamSelect .ui-selecting {
+	background: #FECA40;
+}
+
+#teamSelect .ui-selected {
+	background: #F39814;
+	color: white;
+}
+
+#teamSelect {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 98%;
+}
+
+#teamSelect li {
+	margin: 3px;
+	padding: 0.4em;
+	font-size: 15px;
+	height: 18px;
+}
+
+.adminMsg{
+	color:red;
+}
+
+#user1,#userTeamBlock,#userRoleBlock,#userStatusBlock{
+	display:none;
+}
+
+.transferBtnContainer{
+	display:inline-block;
+	margin-top:60px;
+}
+
+.transferBtn{
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.adminInlineBlock{
+	display:inline-block;
+	height:180px;
+	vertical-align:top;
+}
+
+.adminShuttleBox{
+	background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+	width:250px;
+	height:150px;
+}
+
+.adminFieldset{
+	width:600px;
+	border:1px solid #F39814;
+	border-radius:15px 15px 15px 15px;
+	padding: 5px 0px 5px 5px;
+	margin-left:60px;
+}
+.adminFieldsetTitle{
+	color: #F39814;
+	font-weight: bold;
+	font-size: 15px;
+}

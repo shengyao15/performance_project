@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>HTTP 404 Not Found | Haas Automation, Inc. | CNC Machine Tools</title>
+<meta http-equiv="Refresh" content="10; URL=http://www.haascnc.com/">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<style type="text/css">@import url(print.css) print;</style>
+<link type="text/css" rel="stylesheet" href="/print.css" media="print" />
+<link type="text/css" rel="stylesheet" href="/style.css" media="screen" />
+<!--[if lt IE 8]>
+<link type="text/css" rel="stylesheet" href="style_ie.css" media="screen" />
+<![endif]-->
+</head>
+
+<body>
+<div class="bgTop"></div>
+<div id="container" class="job">
+<div class="logo_print"><img src="/images/logo_haas_print.jpg" width="402" height="86" /></div>
+<div id="logo"><a href="http://haascnc.com">Haas Automation Inc</a></div><!-- .logo -->
+<div id="navibar"><img src="/images/bg_navibarshadow.png" width="1004" height="170" border="0" /></div><!-- .navibar -->
+<div id="navi">
+</div><!-- .navi -->
+
+<div id="contbody" class="nopboard"><div class="wrapper">
+<div class="title">
+<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td>HTTP 404 Not Found</td></tr></table>
+</div><!-- .title -->
+
+<!------------- 404 ------------->
+<div class="toggle_trigger off w928"><h1>File or Directory Not Found</h1></div><!-- .toggle_trigger off -->
+<div class="toggle_cont">
+<div class="block alignJust">
+<h2>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h2>
+<p>Please try the following:</p>
+<ul>
+<li>Click "<a href="http://www.haascnc.com/">Haas Automation Inc</a>" to return to the Haas home page.</li>
+<li>Make sure that the web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+<li>If you reached this page by clicking a link, contact the web site administrator to alert them that the link is incorrectly formatted.</li>
+<li>Click the "<a href="javascript:history.go(-1)">Back</a>" button to try another link.</li>
+</ul>
+<h2>Technical Information (for support personnel)</h2>
+<ul>
+<li>Go to Microsoft Product Support Services and perform a title search for the words HTTP and 404.</li>
+<li>Open IIS Help, which is accessible in IIS Manager (inetmgr), and search for topics titled Web Site Setup, Common Administrative Tasks, and About Custom Error Messages.</li>
+</ul>
+</div><!-- .block -->
+<div class="bottom w928"></div><!-- .bottom -->
+</div><!-- .toggle_cont -->
+
+<div class="footer_b nobg alignCM">
+<script type="text/javascript">
+var d = new Date();
+document.write("&copy; " + d.getFullYear() + " Haas Automation, Inc - CNC Machine Tools");
+</script>
+ / 2800 Sturgis Rd. Oxnard, CA  93030 / Toll Free: 800-331-6746
+</div>
+
+<div class="clear"></div><!-- .clear -->
+</div><!-- .wrapper -->
+</div><!-- .contbody -->
+
+</div><!-- .container -->
+
+</body>
+</html>
+

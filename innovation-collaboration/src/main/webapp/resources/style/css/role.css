@@ -1,0 +1,25 @@
+#role2 li em {
+    background: url("/resources/style/img/tips.png") no-repeat scroll 0 0 transparent;
+    display: none;
+    font-style: normal;
+    height: 45px;
+    left: 10px;
+    padding: 20px 12px 10px;
+    position: absolute;
+    text-align: center;
+    top: -65px;
+    width: 180px;
+    z-index: 1200;
+}
+.ui-widget-header{
+	background:url("/resources/style/img/tableIcon/ui-bg_highlight-soft_75_cccccc_1x100.png");
+	color:#222222;
+	font-weight:normal;
+	border:1px solid #AAAAAA;
+	padding:7px;
+		
+}
+
+#role1,#role2,#role3,#roleMemberBlock,#roleInfoBlock{
+	display:none;
+}
