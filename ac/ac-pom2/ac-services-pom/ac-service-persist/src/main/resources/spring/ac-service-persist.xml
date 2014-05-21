@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:annotation-config />
+
+	<bean class="com.hp.it.perf.ac.service.persist.AcPersistServiceImpl" />
+	
+	<bean class="com.hp.it.perf.ac.service.persist.dao.impl.AcHibernateDao" />
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${ac.persist.jdbc.driver}</value>
+		</property>
+		<property name="url">
+			<value>${ac.persist.jdbc.url}</value>
+		</property>
+		<property name="username">
+			<value>${ac.persist.jdbc.username}</value>
+		</property>
+		<property name="password">
+			<value>${ac.persist.jdbc.password}</value>
+		</property>
+		<property name="testOnBorrow">
+			<value>${ac.persist.jdbc.testOnBorrow}</value>
+		</property>
+		<property name="validationQuery">
+			<value>${ac.persist.jdbc.validationQuery}</value>
+		</property>
+	</bean>
+	
+	<!-- hibernate3 session Bean -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+		<!-- TODO use external parameters -->
+		<property name="packagesToScan" value="com.hp.it.perf.ac.app.hpsc.beans"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${ac.persist.hibernate.dialect}</prop>
+				<prop key="hibernate.use_outer_join">true</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="javax.persistence.validation.mode">none</prop>
+				<prop key="hibernate.jdbc.batch_size">5000</prop>
+				<prop key="hibernate.cache.use_second_level_cache">false</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="mongo" class="com.mongodb.Mongo">
+		<constructor-arg name="host" value="${ac.persist.mongo.host}" />
+		<constructor-arg name="port" value="${ac.persist.mongo.port}" />
+	</bean>
+	
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongo" ref="mongo" />
+		<!-- Keep each profile different DB -->
+		<constructor-arg name="databaseName" value="${ac.persist.mongo.db.name}${ac.context.profileId}" />
+	</bean>
+	
+	<bean id="mongoDao" class="com.hp.it.perf.ac.service.persist.dao.impl.AcCommonDataMongoDBDao" />
+
+</beans>

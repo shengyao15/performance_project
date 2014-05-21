@@ -1,0 +1,10 @@
+{"treeData":[
+	{"id":"cate1","value":"consumer","types":[
+		{"id":"type1","value":"error"},
+		{"id":"type2","value":"gc"}
+	]},
+	{"id":"cate2","value":"producer","types":[
+		{"id":"type3","value":"swd"},
+		{"id":"type4","value":"psi"}
+	]}
+]}

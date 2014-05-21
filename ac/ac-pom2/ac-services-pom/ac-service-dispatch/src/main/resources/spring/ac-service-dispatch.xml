@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:datagraph="http://www.springframework.org/schema/data/graph"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+            http://www.springframework.org/schema/data/graph
+            http://www.springframework.org/schema/data/graph/datagraph-1.0.xsd">
+	
+	<context:annotation-config />
+	<!-- 
+	<bean class="com.hp.it.perf.ac.service.dispatch.impl.AcDispatchServiceImpl" />
+	<bean class="com.hp.it.perf.ac.service.dispatch.impl.AcInternalDataBus" />
+	<bean class="com.hp.it.perf.ac.service.dispatch.impl.ContextDataDispatcher">
+		<constructor-arg index="0">
+			<value>10000</value>
+		</constructor-arg>
+	</bean>
+	 -->
+	 <bean class="com.hp.it.perf.ac.service.dispatch.hub.AcDispatchServiceHub">
+		<constructor-arg index="0">
+			<value>100000</value>
+		</constructor-arg>
+	</bean>
+
+</beans>

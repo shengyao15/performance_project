@@ -1,0 +1,88 @@
+{
+	"root": {
+		"parser": "delims",
+		"pattern": "| {DATE_TIME} | {TRANSACTION_ID} | {SESSION_ID} | {PORTLET_NAME} | {PORTLET_METHOD} | {DURATION} | {PERF_DETAIL_LIST} | {MESSAGE}"
+		"children": {
+			"DATE_TIME": {
+				"parser": "datetime"
+			},
+			"TRANSACTION_ID": {
+				"parser": "number"
+			},
+			"SESSION_ID": {
+				"parser": "regex",
+				"pattern": "(\\d\\d)(\\d\\d)(\\d+)"
+			},
+			"PORTLET_METHOD": {
+				"parser": "constant",
+				"name": [
+					"RENDER_PHASE",
+					"ACTION_PHASE",
+					"RESOURCE_PHASE",
+					"DUMMY | _PHASE"
+				]
+			},
+			"DURATION": {
+				"parser": "number"
+			},
+			"PERF_DETAIL_LIST": {
+				"parser": "delimslist",
+				"delims": ",",
+				"pattern": "PERF_DETAIL"
+			},
+			"MESSAGE": {
+				"parser": "text",
+				"format": ":MATCH_ANY:",
+				"alias": "message"
+			}
+		}
+	},
+	"PERF_DETAIL": {
+		"parser": "delims",
+		"pattern": "\{{DETAIL_TYPE}({DETAIL_NAME}):{DURATION}\}",
+		"children": {
+			"DURATION": {
+				"parser": "number"
+			}
+		}
+	},
+	"another": {
+		"parser": "delims",
+		"pattern": "| {DATE_TIME} | {TRANSACTION_ID} | {SESSION_ID} | {PORTLET_NAME} | {PORTLET_METHOD} | {DURATION} | {PERF_DETAIL_LIST} | {MESSAGE}\n END OF LINE"
+		"children": {
+			"DATE_TIME": {
+				"parser": "datetime"
+			},
+			"TRANSACTION_ID": {
+				"parser": "number"
+			},
+			"SESSION_ID": {
+				"parser": "regex",
+				"pattern": "(\\d\\d)(\\d\\d)(\\d+)"
+			},
+			"PORTLET_METHOD": {
+				"parser": "constant",
+				"name": [
+					"RENDER_PHASE",
+					"ACTION_PHASE",
+					"RESOURCE_PHASE",
+					"DUMMY | _PHASE"
+				]
+			},
+			"DURATION": {
+				"parser": "number"
+			},
+			"PERF_DETAIL_LIST": {
+				"parser": "delimslist",
+				"delims": ",",
+				"pattern": "PERF_DETAIL"
+			},
+			"MESSAGE": {
+				"parser": "text",
+				"format": ":MATCH_ANY:",
+				"alias": "message"
+			}
+		}
+	},
+	
+}

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="connection.url">
+			jdbc:mysql://spperf.asiapacific.hpqcorp.net:23306/ac
+		</property>
+		<property name="connection.username">perf</property>
+		<property name="connection.password">perf</property>
+		<property name="hibernate.connection.pool_size">10</property>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.use_outer_join">true</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.generate_statistics">true</property>
+		<property name="javax.persistence.validation.mode">none</property>
+		<property name="hibernate.jdbc.batch_size">5000</property>
+		<property name="hibernate.max_fetch_depth">5</property>
+		<property name="hibernate.jdbc.fetch_size">5000</property>
+		<property name="hibernate.cache.use_second_level_cache">false</property>
+		<!-- DB beans -->
+	 	<mapping class="com.hp.it.perf.ac.common.model.AcCommonData"/>
+		<mapping class="com.hp.it.perf.ac.app.hpsc.beans.PortletBusinessLog"/>
+		<mapping class="com.hp.it.perf.ac.app.hpsc.beans.PortletPerformanceLog"/>
+		<mapping class="com.hp.it.perf.ac.app.hpsc.beans.PortletPerformanceLog$Detail"/>
+		<mapping class="com.hp.it.perf.ac.app.hpsc.beans.PortletErrorLog"/>
+		<mapping class="com.hp.it.perf.ac.app.hpsc.beans.PortletErrortraceLog"/>
+		<mapping class="com.hp.it.perf.ac.app.hpsc.beans.SPFPerformanceDBLog"/>
+		<mapping class="com.hp.it.perf.ac.app.hpsc.beans.SPFPerformanceDBLog$Detail"/>
+		<!-- query beans
+		<mapping class ="com.hp.it.perf.ac.app.hpsc.search.bean.ProducerHomeInfo" /> 
+		 -->
+	</session-factory>
+</hibernate-configuration>

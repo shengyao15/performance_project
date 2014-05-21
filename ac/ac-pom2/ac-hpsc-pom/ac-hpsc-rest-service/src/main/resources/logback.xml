@@ -1,0 +1,46 @@
+<configuration debug="true" scan="true" scanPeriod="30 minutes">
+	<property name="APP-NAME" value="AC-REST" />
+	<timestamp key="timestamp" datePattern="yyyyMMdd'T'HHmmss" />
+	<contextName>${APP-NAME}</contextName>
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter"> 
+            <level>debug</level>
+        </filter>
+		<encoder>
+        	<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    	</encoder>
+	</appender>
+	
+	<appender name="RFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    	<File>/home/perf/ac/logs/ac-rest.trace.log</File>
+    	
+    	<encoder>
+      		<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    	</encoder>
+    	<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      		<fileNamePattern>/home/perf/ac/logs/ac-rest.trace.log.%d{yyyy-MM-dd-HH}.gz</fileNamePattern>
+    	</rollingPolicy>
+  	</appender>
+  	
+  	<appender name="DFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    	<File>/home/perf/ac/logs/ac-rest.log</File>
+    	<filter class="ch.qos.logback.classic.filter.ThresholdFilter"> 
+            <level>debug</level>
+        </filter>
+    	<encoder>
+      		<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    	</encoder>
+    	<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      		<fileNamePattern>/home/perf/ac/logs/ac-rest.log.%d{yyyy-MM-dd-HH}.gz</fileNamePattern>
+    	</rollingPolicy>
+  	</appender>
+
+	<logger name="com.hp.it.perf.ac.rest" level="trace"/>
+	
+	<root level="trace">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="RFile" />
+		<appender-ref ref="DFile" />
+	</root>
+</configuration>

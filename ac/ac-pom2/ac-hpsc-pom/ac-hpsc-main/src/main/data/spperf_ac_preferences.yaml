@@ -1,0 +1,38 @@
+--- 
+- !com.hp.it.perf.ac.core.context.DefaultAcPreferences$PreferencesStore
+  name: ""
+- !com.hp.it.perf.ac.core.context.DefaultAcPreferences$PreferencesStore
+  name: chain
+  store: 
+    graphContext.storeDirectory: data/chain
+- !com.hp.it.perf.ac.core.context.DefaultAcPreferences$PreferencesStore
+  name: hpscSearch
+  store: 
+    ac.persist.jdbc.driver: com.mysql.jdbc.Driver
+    ac.persist.jdbc.username: perf
+    ac.persist.jdbc.password: perf
+    ac.persist.jdbc.url: "jdbc:mysql://127.0.0.1:3306/acitg1?useUnicode=true&characterEncoding=UTF-8"
+    ac.persist.hibernate.dialect: org.hibernate.dialect.MySQLDialect
+    ac.persist.jdbc.testOnBorrow: "true"
+    ac.persist.jdbc.validationQuery: "select 1"
+- !com.hp.it.perf.ac.core.context.DefaultAcPreferences$PreferencesStore
+  name: loadclient
+  store: 
+    monitorURL: "service:jmx:rmi:///jndi/rmi://d6t0009g.atlanta.hp.com:12099/filemonitor"
+    startOnActive: true
+- !com.hp.it.perf.ac.core.context.DefaultAcPreferences$PreferencesStore
+  name: persist
+  store: 
+    ac.persist.jdbc.driver: com.mysql.jdbc.Driver
+    ac.persist.jdbc.username: perf
+    ac.persist.jdbc.password: perf
+    ac.persist.jdbc.url: "jdbc:mysql://127.0.0.1:3306/acitg1?useUnicode=true&characterEncoding=UTF-8"
+    ac.persist.hibernate.dialect: org.hibernate.dialect.MySQLDialect
+    ac.persist.jdbc.testOnBorrow: "true"
+    ac.persist.jdbc.validationQuery: "select 1"
+- !com.hp.it.perf.ac.core.context.DefaultAcPreferences$PreferencesStore
+  name: hpscRealtime
+  store: 
+    ac.persist.mongo.host: "127.0.0.1"
+    ac.persist.mongo.port: 27017
+    ac.persist.mongo.db.name: acrt

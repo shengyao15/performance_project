@@ -1,0 +1,365 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hp.it.perf.ac</groupId>
+	<artifactId>ac-pom</artifactId>
+	<version>1.4.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Performance Testing Analysis Cloud</name>
+	<description>Performance Testing Analysis Cloud</description>
+
+	<modules>
+		<module>ac-core</module>
+		<module>ac-common</module>
+		<module>ac-services-pom</module>
+		<module>ac-hpsc-pom</module>
+		<module>log-parser</module>
+		<module>ac-load-client</module>
+		<module>ac-gui</module>
+	</modules>
+
+	<properties>
+		<java.version>1.6</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<springFrameworkVersion>3.1.4.RELEASE</springFrameworkVersion>
+		<ehcacheVersion>2.6.3</ehcacheVersion>
+		<jyamlVersion>1.3</jyamlVersion>
+		<junitVersion>4.9</junitVersion>
+		<slf4jVersion>1.7.1</slf4jVersion>
+		<logbackVersion>1.0.8</logbackVersion>
+		<cglibVersion>2.2.2</cglibVersion>
+		<jodaVersion>2.0</jodaVersion>
+		<jsonVersion>2.4</jsonVersion>
+		<hibernateVersion>3.6.10.Final</hibernateVersion>
+		<hibernateValidatorVersion>4.2.0.Final</hibernateValidatorVersion>
+		<commonsLangVersion>2.6</commonsLangVersion>
+		<commonsIoVersion>2.0</commonsIoVersion>
+		<commonsConfigurationVersion>1.6</commonsConfigurationVersion>
+		<injectVersion>1</injectVersion>
+		<spring-data-neo4j.version>2.2.0.RELEASE</spring-data-neo4j.version>
+
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.4.3</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- Spring framework -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${springFrameworkVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${springFrameworkVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${springFrameworkVersion}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc-portlet</artifactId>
+				<version>${springFrameworkVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${springFrameworkVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${springFrameworkVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${springFrameworkVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${springFrameworkVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${springFrameworkVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-oxm</artifactId>
+				<version>${springFrameworkVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${springFrameworkVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${springFrameworkVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${springFrameworkVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aspects</artifactId>
+				<version>${springFrameworkVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springmodules</groupId>
+				<artifactId>spring-modules-cache</artifactId>
+				<version>0.9</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-neo4j</artifactId>
+				<version>${spring-data-neo4j.version}</version>
+			</dependency>
+
+			<!-- apache commons -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>${commonsLangVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commonsIoVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-configuration</groupId>
+				<artifactId>commons-configuration</artifactId>
+				<version>${commonsConfigurationVersion}</version>
+			</dependency>
+
+			<!-- slf4j log -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4jVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logbackVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>log4j-over-slf4j</artifactId>
+				<version>${slf4jVersion}</version>
+				<type>jar</type>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${slf4jVersion}</version>
+				<type>jar</type>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jul-to-slf4j</artifactId>
+				<version>${slf4jVersion}</version>
+				<type>jar</type>
+				<scope>compile</scope>
+			</dependency>
+
+			<!-- ehcach -->
+			<dependency>
+				<groupId>net.sf.ehcache</groupId>
+				<artifactId>ehcache-core</artifactId>
+				<version>${ehcacheVersion}</version>
+			</dependency>
+
+			<!-- jyaml -->
+			<dependency>
+				<groupId>org.jyaml</groupId>
+				<artifactId>jyaml</artifactId>
+				<version>${jyamlVersion}</version>
+			</dependency>
+
+			<!-- test -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junitVersion}</version>
+				<scope>test</scope>
+			</dependency>
+
+
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib</artifactId>
+				<version>${cglibVersion}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>${jodaVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>net.sf.json-lib</groupId>
+				<artifactId>json-lib</artifactId>
+				<version>${jsonVersion}</version>
+				<classifier>jdk15</classifier>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>${hibernateValidatorVersion}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernateVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.inject</groupId>
+				<artifactId>javax.inject</artifactId>
+				<version>${injectVersion}</version>
+			</dependency>
+			
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-neo4j-aspects</artifactId>
+			<version>${spring-data-neo4j.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.hp.it.perf.ac</groupId>
+			<artifactId>ac-common</artifactId>
+			<version>${project.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.hp.it.perf.ac</groupId>
+			<artifactId>ac-core</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.hp.it.perf.ac</groupId>
+			<artifactId>ac-log-parser</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.hp.it.perf.ac</groupId>
+			<artifactId>ac-load-client</artifactId>
+			<type>jar</type>
+			<version>${project.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.hp.it.perf.ac</groupId>
+			<artifactId>ac-service-transfer</artifactId>
+			<version>${project.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Nexus Release Repository</name>
+			<url>http://perft1.asiapacific.hpqcorp.net/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Nexus Snapshot Repository</name>
+			<url>http://perft1.asiapacific.hpqcorp.net/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<repositories>
+		<repository>
+			<id>spperf-nexus</id>
+			<name>Public</name>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>interval:15</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+			<url>http://perft1.asiapacific.hpqcorp.net/nexus/content/groups/public</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+</project>

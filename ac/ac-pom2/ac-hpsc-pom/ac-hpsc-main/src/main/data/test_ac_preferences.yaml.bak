@@ -1,0 +1,40 @@
+--- 
+- !com.hp.it.perf.ac.core.context.DefaultAcPreferences$PreferencesStore
+  name: ""
+- !com.hp.it.perf.ac.core.context.DefaultAcPreferences$PreferencesStore
+  name: chain
+  store: 
+    graphContext.storeDirectory: data/chain
+- !com.hp.it.perf.ac.core.context.DefaultAcPreferences$PreferencesStore
+  name: hpscRealtime
+  store: 
+    ac.persist.mongo.db.name: acrt
+    ac.persist.mongo.host: perft2.asiapacific.hpqcorp.net
+    ac.persist.mongo.port: 27017
+- !com.hp.it.perf.ac.core.context.DefaultAcPreferences$PreferencesStore
+  name: hpscSearch
+  store: 
+    ac.persist.jdbc.driver: org.h2.Driver
+    ac.persist.jdbc.username: sa
+    ac.persist.jdbc.validationQuery: select 1
+    ac.persist.jdbc.password: sa
+    ac.persist.jdbc.testOnBorrow: true
+    ac.persist.jdbc.url: "jdbc:h2:data/ac-h2"
+- !com.hp.it.perf.ac.core.context.DefaultAcPreferences$PreferencesStore
+  name: loadclient
+  store: 
+    startOnActive: false
+    monitorURL: "service:jmx:rmi:///jndi/rmi://d6t0009g.atlanta.hp.com:12099/filemonitor"
+- !com.hp.it.perf.ac.core.context.DefaultAcPreferences$PreferencesStore
+  name: persist
+  store: 
+    ac.persist.jdbc.driver: org.h2.Driver
+    ac.persist.jdbc.username: sa
+    ac.persist.jdbc.validationQuery: select 1
+    ac.persist.mongo.db.name: ac-tristan
+    ac.persist.jdbc.password: sa
+    ac.persist.mongo.host: perft2.asiapacific.hpqcorp.net
+    ac.persist.jdbc.testOnBorrow: true
+    ac.persist.mongo.port: 27017
+    ac.persist.jdbc.url: "jdbc:h2:data/ac-h2"
+    ac.persist.hibernate.dialect: org.hibernate.dialect.H2Dialect

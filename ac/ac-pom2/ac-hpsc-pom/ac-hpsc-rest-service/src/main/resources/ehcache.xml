@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"      
+    xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" updateCheck="false">      
+    <diskStore path="/home/perf/ac/ehCache/TBD" />        
+    <defaultCache eternal="false"   
+        maxElementsInMemory="1000"          
+        overflowToDisk="false"   
+        diskPersistent="false"   
+        timeToIdleSeconds="0"        
+        timeToLiveSeconds="600"  
+        memoryStoreEvictionPolicy="LRU"/>    
+              
+    <cache name="reportCache" eternal="false"         
+        maxElementsInMemory="100"   
+        overflowToDisk="false"   
+        diskPersistent="false"         
+        timeToIdleSeconds="0"   
+        timeToLiveSeconds="7200"        
+        memoryStoreEvictionPolicy="LRU" />  
+    
+    <cache name="loglistCache" eternal="false"         
+        maxElementsInMemory="1000"   
+        overflowToDisk="false"   
+        diskPersistent="false"         
+        timeToIdleSeconds="0"   
+        timeToLiveSeconds="3600"        
+        memoryStoreEvictionPolicy="LRU" /> 
+    
+    <cache name="logDetailCache" eternal="false"         
+        maxElementsInMemory="10000"   
+        overflowToDisk="false"   
+        diskPersistent="false"         
+        timeToIdleSeconds="0"   
+        timeToLiveSeconds="7200"        
+        memoryStoreEvictionPolicy="LRU" />
+        
+    <cache name="categoryCache" eternal="false"         
+        maxElementsInMemory="100"   
+        overflowToDisk="false"   
+        diskPersistent="false"         
+        timeToIdleSeconds="0"   
+        timeToLiveSeconds="72000"        
+        memoryStoreEvictionPolicy="LRU" />     
+    
+    <cache name="chainCache" eternal="false"         
+        maxElementsInMemory="100"   
+        overflowToDisk="false"   
+        diskPersistent="false"         
+        timeToIdleSeconds="0"   
+        timeToLiveSeconds="3600"        
+        memoryStoreEvictionPolicy="LRU" /> 
+    
+    <cache name="consumerHomeCache" eternal="false"         
+        maxElementsInMemory="100"   
+        overflowToDisk="false"   
+        diskPersistent="false"         
+        timeToIdleSeconds="0"   
+        timeToLiveSeconds="3600"        
+        memoryStoreEvictionPolicy="LRU" />  
+        
+    <cache name="producerHomeCache" eternal="false"         
+        maxElementsInMemory="100"   
+        overflowToDisk="false"   
+        diskPersistent="false"         
+        timeToIdleSeconds="0"   
+        timeToLiveSeconds="3600"        
+        memoryStoreEvictionPolicy="LRU" />   
+          
+</ehcache>  

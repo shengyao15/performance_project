@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>ac-hpsc-pom</artifactId>
+    <groupId>com.hp.it.perf.ac.app.hpsc</groupId>
+    <version>1.4.0-SNAPSHOT</version>
+    <relativePath>..</relativePath>
+  </parent>
+  <artifactId>ac-hpsc-core</artifactId>
+  <name>HPSC AC Service Core Module</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.hp.it.perf.ac</groupId>
+  		<artifactId>ac-log-parser</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.hp.it.perf.ac</groupId>
+  		<artifactId>ac-service-transform</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.hibernate.javax.persistence</groupId>
+  		<artifactId>hibernate-jpa-2.0-api</artifactId>
+  		<version>1.0.1.Final</version>
+  		<type>jar</type>
+  		<scope>compile</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.hp.it.perf.ac</groupId>
+  		<artifactId>ac-load-client</artifactId>
+  	</dependency>
+  </dependencies>
+</project>
